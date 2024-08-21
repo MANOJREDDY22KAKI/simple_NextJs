@@ -69,16 +69,23 @@ const SubHeaders = () => {
       {isDialogBoxOpen && selectdItem && (
         <div>
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-4 rounded-lg">
-              <div className="flex justify-center">
+            <div className="bg-white p-4 rounded-lg relative max-w-md w-full">
+              
+              <button
+                className="absolute w-10 top-2 right-2 bg-red-800 p-2 rounded-lg text-white font-semibold"
+                onClick={closeDialog}
+              >
+                X
+              </button>
+
+              
+              <div className="flex justify-center mb-4">
                 <Image
                   src={selectdItem.url}
                   alt={selectdItem.name}
                   width={200}
                   height={200}
-                >
-                
-                </Image>
+                />
               </div>
               <h1 className="text-lg font-semibold text-center">
                 {selectdItem.name}
@@ -88,7 +95,6 @@ const SubHeaders = () => {
               </h2>
               <p className="text-center font-semibold">{selectdItem.gender}</p>
               <p className="text-center">{selectdItem.description}</p>
-              <button  className="bg-red-800 mt-4 p-2 rounded-lg text-white font-semibold"onClick={closeDialog}>Close</button>
             </div>
           </div>
         </div>
